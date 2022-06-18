@@ -14,3 +14,20 @@ std::stringstream DatabaseReader::readDatabase(){
     file.close();
     return buffer;
 }
+
+void DatabaseReader::writeDatabase(std::string data) {
+    std::ofstream WriteDatabaseFile(this->filename);
+    WriteDatabaseFile << data;
+    WriteDatabaseFile.close();
+}
+
+void DatabaseReader::addLine(std::string line) {
+    std::stringstream buffer = this->readDatabase();
+    std::string string;
+    std::string tempLine;
+    while (std::getline(buffer, tempLine)) {
+        string = string + tempLine + "\n";
+    }
+    string = string + line;
+    this->writeDatabase(string);
+}
