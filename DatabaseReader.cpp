@@ -39,9 +39,19 @@ void DatabaseReader::addCard(Card card) {
 
 std::vector<Card> DatabaseReader::getCards() {
     std::stringstream buffer = this->readDatabase();
-    std::string string;
     std::string tempLine;
     std::vector<Card> cards;
     while (std::getline(buffer, tempLine)) cards.push_back(Card(tempLine));
     return cards;
+}
+
+void DatabaseReader::removeCard(Card card) {
+    std::stringstream buffer = this->readDatabase();
+    std::string tempLine;
+    std::string string;
+    while (std::getline(buffer, tempLine)){
+        if (tempLine == card.toString())continue;
+        else string = string + tempLine + "\n";
+    }
+    this->writeDatabase(string);
 }

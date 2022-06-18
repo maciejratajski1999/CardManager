@@ -7,5 +7,7 @@ int main() {
     DatabaseReader d("database.csv");
     d.addCard(card);
     for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
+    d.removeCard(card);
+    for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
     return 0;
 }

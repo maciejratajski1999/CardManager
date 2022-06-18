@@ -18,6 +18,7 @@ class DatabaseReader {
     public:
         DatabaseReader(std::string filename);
         void addCard(Card card);
+        void removeCard(Card card);
         std::vector<Card> getCards();
 };
 
