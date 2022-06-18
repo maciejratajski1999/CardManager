@@ -7,6 +7,7 @@
 #include<vector>
 #include<fstream>
 #include<sstream>
+#include"Card.h"
 
 class DatabaseReader {
     private:
@@ -16,6 +17,8 @@ class DatabaseReader {
         void addLine(std::string line);
     public:
         DatabaseReader(std::string filename);
+        void addCard(Card card);
+        std::vector<Card> getCards();
 };
 
 

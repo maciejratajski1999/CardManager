@@ -2,6 +2,7 @@
 // Created by Maciej on 18.06.2022.
 //
 #include "DatabaseReader.h"
+#include<iostream>
 
 DatabaseReader::DatabaseReader(std::string filename){
     this->filename = filename;
@@ -30,4 +31,17 @@ void DatabaseReader::addLine(std::string line) {
     }
     string = string + line;
     this->writeDatabase(string);
+}
+
+void DatabaseReader::addCard(Card card) {
+    this->addLine(card.toString());
+}
+
+std::vector<Card> DatabaseReader::getCards() {
+    std::stringstream buffer = this->readDatabase();
+    std::string string;
+    std::string tempLine;
+    std::vector<Card> cards;
+    while (std::getline(buffer, tempLine)) cards.push_back(Card(tempLine));
+    return cards;
 }
