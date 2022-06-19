@@ -17,3 +17,22 @@ std::vector<std::string> splitString(std::string str, char separator) {
     split.push_back(temp);
     return split;
 }
+
+int addDigits(long long number){
+    std::string digits = std::to_string(number);
+    int accumulator = 0;
+    for (char c : digits) accumulator += c - '0';
+    return accumulator;
+}
+
+bool LuhnAlgorithm(long long number){
+    std::string digits = std::to_string(number);
+    for (int i = digits.size() -2; i >= 0; i -= 2){
+        int n = (digits[i] - '0') * 2;
+        if (n >= 10) n = addDigits(n);
+        digits[i] = n + '0';
+    }
+    int sum = addDigits(std::stoi(digits));
+    if (sum % 10 == 0) return true;
+    else return false;
+}

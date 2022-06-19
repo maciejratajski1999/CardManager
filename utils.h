@@ -14,4 +14,6 @@ void printVector(std::vector<T> v) {
         std::cout << i << std::endl;
     }
 }
+int addDigits(long long number);
+bool LuhnAlgorithm(long long Number);
 #endif //CARDMANAGER_UTILS_H

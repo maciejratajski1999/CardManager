@@ -9,5 +9,7 @@ int main() {
     for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
     d.removeCard(card);
     for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
+    LuhnAlgorithm(4780671466102940);
+
     return 0;
 }
