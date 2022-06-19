@@ -2,6 +2,7 @@
 // Created by Maciej on 18.06.2022.
 //
 #include"utils.h"
+
 std::vector<std::string> splitString(std::string str, char separator) {
     std::vector<std::string> split;
     std::string temp = "";
@@ -35,4 +36,10 @@ bool LuhnAlgorithm(long long number){
     int sum = addDigits(std::stoll(digits));
     if (sum % 10 == 0) return true;
     else return false;
+}
+
+std::map<std::string, int> providers = {{"VISA", 4}, {"MASTERCARD", 5}};
+bool validateBrand(std::string brand, long long number){
+    if (providers.find(brand) == providers.end()) return false;
+    else return std::to_string(number).rfind(providers[brand], 0) == std::string::npos;
 }

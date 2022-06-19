@@ -6,6 +6,7 @@
 #define CARDMANAGER_CARD_H
 #include<string>
 #include<vector>
+#include "utils.h"
 
 class Card {
     private:

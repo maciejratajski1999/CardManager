@@ -2,7 +2,7 @@
 // Created by Maciej on 18.06.2022.
 //
 #include "Card.h"
-#include "utils.h"
+
 Card::Card(std::string brand, long long number){
     this->brand = brand;
     this->number = number;
@@ -19,5 +19,5 @@ std::string Card::toString() {
 }
 
 bool Card::isValid() {
-    return LuhnAlgorithm(this->number);
+    return LuhnAlgorithm(this->number) and validateBrand(this->brand, this->number);
 }

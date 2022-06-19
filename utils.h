@@ -7,6 +7,7 @@
 #include<string>
 #include<vector>
 #include<iostream>
+#include<map>
 std::vector<std::string> splitString(std::string str, char separator);
 template<typename T>
 void printVector(std::vector<T> v) {
@@ -16,4 +17,5 @@ void printVector(std::vector<T> v) {
 }
 int addDigits(long long number);
 bool LuhnAlgorithm(long long Number);
+bool validateBrand(std::string brand, long long number);
 #endif //CARDMANAGER_UTILS_H
