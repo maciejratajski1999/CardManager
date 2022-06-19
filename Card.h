@@ -15,6 +15,7 @@ class Card {
         Card(std::string brand, long long number);
         Card(std::string line);
         std::string toString();
+        bool isValid();
 };
 
 

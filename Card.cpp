@@ -17,3 +17,7 @@ Card::Card(std::string line){
 std::string Card::toString() {
     return this->brand + "," + std::to_string(this->number);
 }
+
+bool Card::isValid() {
+    return LuhnAlgorithm(this->number);
+}

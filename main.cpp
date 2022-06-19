@@ -5,11 +5,6 @@
 int main() {
     Card card("VISA", 4780671466102940);
     DatabaseReader d("database.csv");
-    d.addCard(card);
-    for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
-    d.removeCard(card);
-    for (Card card : d.getCards()) std::cout << card.toString() << std::endl;
-    LuhnAlgorithm(4780671466102940);
-
+    std::cout << card.isValid() << std::endl;
     return 0;
 }
