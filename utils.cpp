@@ -32,7 +32,7 @@ bool LuhnAlgorithm(long long number){
         if (n >= 10) n = addDigits(n);
         digits[i] = n + '0';
     }
-    int sum = addDigits(std::stoi(digits));
+    int sum = addDigits(std::stoll(digits));
     if (sum % 10 == 0) return true;
     else return false;
 }
